@@ -34,20 +34,18 @@ const UserInfo = () => {
       </>
     )
   } else {
-    return (
-      <>
-        <Link href={Routes.SignupPage()}>
-          <a className="button small">
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
-        <Link href={Routes.LoginPage()}>
-          <a className="button small">
-            <strong>Login</strong>
-          </a>
-        </Link>
-      </>
-    )
+    return <>
+      <Link href={Routes.SignupPage()} legacyBehavior>
+        <a className="button small">
+          <strong>Sign Up</strong>
+        </a>
+      </Link>
+      <Link href={Routes.LoginPage()} legacyBehavior>
+        <a className="button small">
+          <strong>Login</strong>
+        </a>
+      </Link>
+    </>;
   }
 }
 
@@ -86,7 +84,7 @@ const Home: BlitzPage = () => {
             </pre>
             <p>
               and go to{" "}
-              <Link href="/projects">
+              <Link href="/projects" legacyBehavior>
                 <a>/projects</a>
               </Link>
             </p>
@@ -263,7 +261,7 @@ const Home: BlitzPage = () => {
         `}</style>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default Home
